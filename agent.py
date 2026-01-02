@@ -11,7 +11,7 @@ except ImportError:
 from db import db
 
 # Set your OpenAI API key (REPLACE WITH YOUR KEY)
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = ""
 
 # Define tools
 @function_tool
