@@ -1,6 +1,8 @@
 import os
 import sys
 
+from dotenv import load_dotenv
+
 # Try to import agents SDK
 try:
     from agents import Agent, Runner, function_tool
@@ -10,8 +12,10 @@ except ImportError:
 
 from db import db
 
-# Set your OpenAI API key (REPLACE WITH YOUR KEY)
-os.environ["OPENAI_API_KEY"] = ""
+load_dotenv()
+
+if not os.getenv("OPENAI_API_KEY"):
+    print("⚠️  OPENAI_API_KEY is not set. Add it to .env before chatting with the agent.")
 
 # Define tools
 @function_tool
